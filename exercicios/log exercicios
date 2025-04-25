@@ -1,3 +1,10 @@
+#DEBUG	Expor eventos necessários para possíveis problemas de desenvolvimento ou em ambientes de teste
+#INFO	Eventos somente informativos. Uma chamada externa, um login, alguma verificação rotineira. Mas somente informativos
+#WARN	Eventos inesperados, que não resultaram em erros, porém devem ser analisadas com atenção depois
+#ERROR	Eventos não conseguiram ser executados, alguma coisa não está funcionando como deveria funcionar
+#CRITICAL	Um evento, ou alguma parte da aplicação está comprometida. Faz com que o sistema não atue da maneira que deveria operar.
+
+
 import sys
 import os
 import logging
