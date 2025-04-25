@@ -1,84 +1,9 @@
-# python app.py add "Pedro Luiz" 25
-# Usuário adicionado com sucesso!
-
-# python app.py rm "Pedro Luiz"
-# Usuário removido com sucesso!
-
-# python app.py search "Pedro Luiz"
-# nome: Pedro Luiz
-# idade: 25
-
-# python app.py list
-# --------------------
-# nome: Pedro Luiz
-# idade: 25
-# --------------------
-# nome: Pedro Henrique
-# idade: 20
-# --------------------
-
-
 import sys
 import os
 import logging
+from datetime import datetime
 
-logging.basicConfig(filename='meulog.log')
+logging.basicConfig(filename='meulog.log', level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger()
 DATABASE = "database.txt"
-
-
-def create_database():
-    if os.path.exists(f"./{DATABASE}"):
-        logger.info("Banco de dados já existente")
-        pass
-    else:
-        logger.info("Criando um novo banco de dados")
-        try:
-            database_path = f"./{DATABASE}"
-            logger.debug(f"Caminho para o database: {database_path}")
-            with open(database_path, "w") as f:
-                pass
-        except Exception as e:
-            logger.error(f"Erro ao criar banco de dados: {e}")
-
-
-def add_user(user_name, user_age):
-    logger.info(f"Usuário a ser adicionado: {user_name} - {user_age}")
-    pass
-    logger.info(f"Usuário adicionado com sucesso!")
-
-
-def rm_user(user_name):
-    logger.info(f"Usuário a ser removido: {user_name}")
-    # operações para remoção do usuário
-    logger.info(f"Usuário removido com sucesso!")
-
-
-if __name__ == "__main__":
-    argv = sys.argv
-    # python app.py add "Pedro Luiz" 25
-    # argv[0] - app.py
-    # argv[1] - add / ad
-    # argv[2] - "Pedro Luiz"
-    # argv[3] - 25
-    logger.info(f"Aplicação iniciada")
-    logger.debug(f"Valores de argv: {argv}")
-
-    create_database()
-
-    op = argv[1]
-    if op == "add":
-        logger.info(f"Realizando operação add")
-        user_name = argv[2]
-        user_age = argv[3]
-        add_user(user_name, user_age)
-    elif op == "rm":
-        logger.info(f"Realizando operação rm")
-        user_name = argv[2]
-        rm_user(user_name)
-    elif op == "search":
-        pass
-    elif op == "list":
-        pass
-    else:
-        logger.warning(f"Código de operação não reconhecido: {op}")
