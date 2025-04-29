@@ -1,0 +1,10 @@
+2025-04-29 08:46:00,460 - INFO - Iniciando o processamento dos dados.
+2025-04-29 08:46:00,460 - DEBUG - Processando item 0: 10
+2025-04-29 08:46:00,460 - DEBUG - Processando item 1: 5
+2025-04-29 08:46:00,460 - DEBUG - Processando item 2: -2
+2025-04-29 08:46:00,460 - ERROR - Dado inválido: -2
+2025-04-29 08:46:00,461 - DEBUG - Processando item 3: 8
+2025-04-29 08:46:00,461 - DEBUG - Processando item 4: 0
+2025-04-29 08:46:00,461 - DEBUG - Processando item 5: -5
+2025-04-29 08:46:00,461 - ERROR - Dado inválido: -5
+2025-04-29 08:46:00,461 - INFO - Processamento concluído.
